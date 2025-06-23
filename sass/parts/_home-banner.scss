@@ -19,10 +19,17 @@
     line-height: 200%;
     padding-right: 5%;
 }
+
+/* Style the "Stephen J. Barr" heading with blue color */
+#home-banner-text h2 {
+    color: #1278E0; /* Blue from the cool palette */
+}
+
 .banner-home-img{
     border-radius: 50%;
-    border:none;
+    border: none;
 }
+
 @media only screen and (max-width: 600px) {
     #banner-container-home {
         display: block;
