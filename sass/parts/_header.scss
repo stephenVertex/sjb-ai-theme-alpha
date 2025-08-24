@@ -59,8 +59,13 @@ header {
 }
 
 /* Use uchu-green-6 for nav links in light mode, but not home title */
-[data-theme="light"] .nav-navs .nav-links {
+[data-theme="light"] .nav-navs .nav-links:not(.home-title) {
   color: var(--uchu-green-6);
+}
+
+/* Ensure home title stays blue in light mode */
+[data-theme="light"] .home-title {
+  color: #1278E0;
 }
 .nav-links:hover {
   color: var(--links);
