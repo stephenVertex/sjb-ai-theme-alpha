@@ -58,9 +58,14 @@ stylesheets = [
 These filenames are relative to the root of the site. In this example, the two CSS files would be in the `static` folder.
 
 
+## Color System
+
+This theme includes the [Uchu color system](https://github.com/NeverCease/uchu) - a modern, accessible color palette using OKLCH color space. The Uchu colors are available as CSS custom properties and can be used throughout the theme styling.
+
 ## References
 
 This theme takes inspiration from 
 - [apollo](https://github.com/not-matthias/apollo).  
 - [Tania's Website](https://tania.dev/)
 - [Anpu Zola Theme](https://github.com/zbrox/anpu-zola-theme)
+- [Uchu Color System](https://github.com/NeverCease/uchu) for the modern color palette
