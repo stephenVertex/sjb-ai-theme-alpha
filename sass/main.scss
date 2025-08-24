@@ -1,3 +1,5 @@
+@import "_uchu-colors";
+
 @font-face {
   font-family: 'Open Sans';
   src: url("/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf");
@@ -112,4 +114,9 @@ body{
 /* Style the "Blog" heading with green color */
 .content h2 {
   color: #24D9BA; /* Green from the cool palette */
+}
+
+/* Use uchu-green-6 for h2 in light mode */
+[data-theme="light"] .content h2 {
+  color: var(--uchu-green-6);
 }
