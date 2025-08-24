@@ -1,59 +1,42 @@
 .theme-switcher{
-    top: -13px;
-    width: 50px;
-    height: 20px;
     position: relative;
     cursor: pointer;
     margin: 0 auto;
-    .background{
-        width: 50px;
-        height: 20px;
-        background-color: var(--input-back);
-        border-radius: 30px;
-    }
-    .switch{
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        height: 30px;
-        width: 30px;
-        background-color: var(--input-color);
-        position: absolute;
-        top: -5px;
-        left: 0px;
-        border-radius: 50%;
-        transition: all 0.3s ease-in-out;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img{
-            width: 60%;
-            height: auto;
-            position: absolute;
-            transition: all 0.2s ease-in-out;
-            border:none;
-        }
-        .sun{
-            opacity: 0;
-        }
-        .moon{
-            opacity: 1;
-        }
-    }
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    
     input{
         display: none;
-        &:checked + .switch {
-            left: 20px;
-            .sun{
-                opacity: 1;
-            }
-            .moon{
-                opacity: 0;
-            }
-        }
+    }
+    
+    img{
+        width: 40px;
+        height: 40px;
+        transition: opacity 0.3s ease-in-out;
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: contain;
+    }
+    
+    .switch-off{
+        opacity: 1;
+    }
+    
+    .switch-on{
+        opacity: 0;
+    }
+    
+    input:checked ~ .switch-off{
+        opacity: 0;
+    }
+    
+    input:checked ~ .switch-on{
+        opacity: 1;
     }
 }
-
-
-
 
 
 .logo {
