@@ -80,7 +80,7 @@
         <h2>
             {{ desc.title }}
         </h2>
-        <p id="banner-home-subtitle">{{ desc.text }}</p>
+        <p id="banner-home-subtitle">{{ desc.text | safe }}</p>
     </div>
     <div class="image-container-home">
         <img alt = "the owner" class="banner-home-img" src="{{ desc.img }}" />
