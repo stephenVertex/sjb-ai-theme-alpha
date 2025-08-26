@@ -66,10 +66,25 @@ html {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6em;
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
 body{
   margin:0;
   padding:0;
+}
+
+/* Theme transition animations */
+* {
+  transition: background-color 1s ease-in-out, 
+              color 1s ease-in-out,
+              border-color 1s ease-in-out;
+}
+
+/* Faster transition for interactive elements */
+a, button, input, .theme-switcher {
+  transition: background-color 0.5s ease-in-out, 
+              color 0.5s ease-in-out,
+              border-color 0.5s ease-in-out;
 }
 .content {
   max-width: var(--max-layout-width);
