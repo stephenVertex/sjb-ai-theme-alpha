@@ -33,3 +33,20 @@ figure h4::before {
 svg {
   max-height: 15px;
 }
+
+/* Profile image theme switching */
+.profile-img-light {
+  display: none;
+}
+
+.profile-img-dark {
+  display: block;
+}
+
+[data-theme="light"] .profile-img-light {
+  display: block;
+}
+
+[data-theme="light"] .profile-img-dark {
+  display: none;
+}

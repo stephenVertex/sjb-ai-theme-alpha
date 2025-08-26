@@ -83,7 +83,12 @@
         <p id="banner-home-subtitle">{{ desc.text | safe }}</p>
     </div>
     <div class="image-container-home">
+        {% if desc.img_light and desc.img_dark %}
+        <img alt = "the owner" class="banner-home-img profile-img-light" src="{{ desc.img_light }}" />
+        <img alt = "the owner" class="banner-home-img profile-img-dark" src="{{ desc.img_dark }}" />
+        {% elif desc.img %}
         <img alt = "the owner" class="banner-home-img" src="{{ desc.img }}" />
+        {% endif %}
     </div>
 </div>
 {% endmacro content %}
