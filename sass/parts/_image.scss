@@ -35,32 +35,34 @@ svg {
 }
 
 /* Profile image theme switching with fade animation */
+.image-container-home {
+  position: relative;
+}
+
 .profile-img-light, .profile-img-dark {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: auto;
   transition: opacity 1s ease-in-out;
 }
 
-.profile-img-light {
-  opacity: 0;
-}
-
+/* Dark image is in normal flow, light image overlays */
 .profile-img-dark {
+  display: block;
   opacity: 1;
 }
 
+.profile-img-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* Light theme: show light image, hide dark */
 [data-theme="light"] .profile-img-light {
   opacity: 1;
 }
 
 [data-theme="light"] .profile-img-dark {
-  opacity: 0;
-}
-
-/* Ensure the container maintains proper height */
-.image-container-home {
-  position: relative;
+  opacity: 1; /* Keep visible but behind light image */
 }
