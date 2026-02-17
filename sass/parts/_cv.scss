@@ -36,6 +36,18 @@
   }
 }
 
+.cv-icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cv-icon {
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: -0.1em;
+}
+
 .cv-sep {
   margin: 0 0.4rem;
   opacity: 0.3;
@@ -181,10 +193,18 @@
 }
 
 /* ========================================
-   Print Styles
+   Print Styles — match web light-mode appearance
    ======================================== */
 @media print {
-  /* Hide site chrome */
+  /* Force browser to print backgrounds and colors */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    transition: none !important;
+  }
+
+  /* Hide interactive elements: back button, lightswitch, nav, footer */
   nav,
   .navbar,
   footer,
@@ -196,29 +216,25 @@
     display: none !important;
   }
 
-  /* Reset colors for print */
+  /* Force light-mode colors */
+  :root {
+    --text-color: #222226 !important;
+    --background-color: #ffffff !important;
+    --meta-color: rgb(53, 53, 53) !important;
+    --border-color: rgb(114, 114, 114) !important;
+    --light-border-color: rgba(0, 0, 0, 0.08) !important;
+    --primary-color: #ef5350 !important;
+    --links: #449cf8 !important;
+    --bg-0: #fff !important;
+    --bg-1: #f2f2f2 !important;
+  }
+
   html,
   body {
-    background: white !important;
-    color: black !important;
+    background: #ffffff !important;
+    color: #222226 !important;
     font-size: 10.5pt;
-    line-height: 1.4;
-  }
-
-  /* Override dark mode vars for print */
-  :root {
-    --text-color: black !important;
-    --background-color: white !important;
-    --meta-color: #555 !important;
-    --border-color: #ccc !important;
-    --links: black !important;
-  }
-
-  /* Disable transitions for instant rendering */
-  * {
-    transition: none !important;
-    color: black !important;
-    background: white !important;
+    line-height: 1.5;
   }
 
   .content {
@@ -229,50 +245,138 @@
 
   .cv {
     max-width: 100%;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   }
 
+  /* Header — centered with bottom border, matching web light mode */
   .cv-header {
-    margin-bottom: 1rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1.5pt solid black;
-  }
-
-  .cv-contact a {
-    text-decoration: none;
-    color: black !important;
-  }
-
-  .cv-body h2 {
-    margin-top: 1.2rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1pt solid #999;
-    font-size: 11pt;
-  }
-
-  .cv-entry {
-    margin-bottom: 0.8rem;
-    break-inside: avoid;
-    border: none;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+    background: transparent !important;
+    border-bottom: 2px solid rgb(114, 114, 114) !important;
     border-radius: 0;
-    padding: 0;
-    background: none !important;
 
-    &:hover {
-      border-left-color: transparent;
+    h1 {
+      color: #222226 !important;
+      font-size: 22pt;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
     }
   }
 
+  .cv-contact {
+    font-size: 10pt;
+    color: rgb(53, 53, 53) !important;
+
+    a {
+      text-decoration: none;
+      color: #449cf8 !important;
+    }
+  }
+
+  .cv-icon {
+    width: 0.9em !important;
+    height: 0.9em !important;
+    display: inline-block;
+    fill: #449cf8 !important;
+  }
+
+  .cv-sep {
+    color: rgb(53, 53, 53) !important;
+    margin: 0 0.4rem;
+    opacity: 0.3;
+  }
+
+  /* Section headings — red accent like web */
+  .cv-body h2 {
+    font-size: 11pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #ef5350 !important;
+    color: #222226 !important;
+  }
+
+  /* Entry cards — light background with card styling */
+  .cv-entry {
+    margin-bottom: 0.9rem;
+    padding: 0.9rem 1.1rem;
+    background: #f2f2f2 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-left: 3px solid #ef5350 !important;
+    border-radius: 8px;
+    break-inside: avoid;
+  }
+
+  .cv-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .cv-entry-title {
+    font-weight: 600;
+    font-size: 11pt;
+    color: #222226 !important;
+  }
+
   .cv-entry-date {
-    color: #555 !important;
+    font-size: 8pt;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(53, 53, 53) !important;
   }
 
   .cv-entry-org {
-    color: #555 !important;
+    font-size: 9pt;
+    color: rgb(53, 53, 53) !important;
+    font-style: italic;
+    margin-top: 0.15rem;
+  }
+
+  .cv-entry-details {
+    margin-top: 0.4rem;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #222226 !important;
+
+    ul {
+      margin: 0.3rem 0;
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      margin: 0.4rem 0 0 0;
+      font-size: 8.5pt;
+      line-height: 1.7;
+
+      strong {
+        font-weight: 600;
+        color: rgb(53, 53, 53) !important;
+        text-transform: uppercase;
+        font-size: 7.5pt;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  /* Links should look like links */
+  .cv-entry-details a {
+    color: #449cf8 !important;
+    text-decoration: underline;
   }
 
   /* Page margins */
   @page {
-    margin: 0.75in;
+    margin: 0.4in 0.5in;
   }
 
   /* Avoid orphan headings */
