@@ -57,8 +57,11 @@
 
 /* CV entry: a role/position block */
 .cv-entry {
-  margin-bottom: 1.8rem;
-  padding-left: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--bg-1);
+  border-radius: 8px;
+  border: 1px solid var(--light-border-color);
   border-left: 3px solid transparent;
   break-inside: avoid;
 
@@ -216,8 +219,10 @@
   .cv-entry {
     margin-bottom: 0.8rem;
     break-inside: avoid;
-    border-left: none;
-    padding-left: 0;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: none !important;
 
     &:hover {
       border-left-color: transparent;
