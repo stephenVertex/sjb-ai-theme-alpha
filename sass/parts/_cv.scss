@@ -3,17 +3,22 @@
 .cv {
   max-width: var(--max-layout-width);
   margin: 0 auto;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .cv-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 2px solid var(--border-color);
 
   h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+    margin-bottom: 0.4rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -33,23 +38,33 @@
 
 .cv-sep {
   margin: 0 0.4rem;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .cv-body {
   h2 {
-    font-size: 1.4rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.3rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
   }
 }
 
 /* CV entry: a role/position block */
 .cv-entry {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
   break-inside: avoid;
+
+  &:hover {
+    border-left-color: var(--primary-color);
+  }
 }
 
 .cv-entry-header {
@@ -61,34 +76,50 @@
 }
 
 .cv-entry-title {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.05rem;
 }
 
 .cv-entry-date {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-family: 'Roboto Mono', monospace;
   color: var(--meta-color);
   white-space: nowrap;
 }
 
 .cv-entry-org {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--meta-color);
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
+  font-style: italic;
 }
 
 .cv-entry-details {
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
   line-height: 1.6;
 
   ul {
-    margin: 0.3rem 0;
-    padding-left: 1.5rem;
+    margin: 0.4rem 0;
+    padding-left: 1.3rem;
   }
 
   li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.82rem;
+    line-height: 1.8;
+
+    strong {
+      font-weight: 600;
+      color: var(--meta-color);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+    }
   }
 }
 
@@ -97,6 +128,10 @@
   .cv-entry-header {
     flex-direction: column;
     gap: 0;
+  }
+
+  .cv-entry {
+    padding-left: 0.6rem;
   }
 
   .cv-contact {
@@ -130,7 +165,7 @@
   body {
     background: white !important;
     color: black !important;
-    font-size: 11pt;
+    font-size: 10.5pt;
     line-height: 1.4;
   }
 
@@ -174,13 +209,19 @@
   .cv-body h2 {
     margin-top: 1.2rem;
     margin-bottom: 0.5rem;
-    border-bottom: 0.5pt solid #999;
-    font-size: 13pt;
+    border-bottom: 1pt solid #999;
+    font-size: 11pt;
   }
 
   .cv-entry {
     margin-bottom: 0.8rem;
     break-inside: avoid;
+    border-left: none;
+    padding-left: 0;
+
+    &:hover {
+      border-left-color: transparent;
+    }
   }
 
   .cv-entry-date {
