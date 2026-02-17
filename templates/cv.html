@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<article class="cv">
+    <header class="cv-header">
+        <h1>{{ page.title }}</h1>
+        <div class="cv-contact">
+            <span>Stephen J. Barr</span>
+            <span class="cv-sep">|</span>
+            <a href="https://www.stephenbarr.ai">stephenbarr.ai</a>
+            <span class="cv-sep">|</span>
+            <a href="https://www.linkedin.com/in/stephenjbarr/">LinkedIn</a>
+            <span class="cv-sep">|</span>
+            <a href="https://github.com/stephenVertex">GitHub</a>
+        </div>
+    </header>
+
+    <div class="cv-body">
+        {{ page.content | safe }}
+    </div>
+</article>
+{% endblock main_content %}

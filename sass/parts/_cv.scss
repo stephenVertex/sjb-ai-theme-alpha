@@ -1,0 +1,203 @@
+/* CV Page Styles */
+
+.cv {
+  max-width: var(--max-layout-width);
+  margin: 0 auto;
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+
+  h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+.cv-contact {
+  font-size: 0.9rem;
+  color: var(--meta-color);
+
+  a {
+    color: var(--links);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.cv-sep {
+  margin: 0 0.4rem;
+  opacity: 0.4;
+}
+
+.cv-body {
+  h2 {
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* CV entry: a role/position block */
+.cv-entry {
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-entry-title {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.cv-entry-date {
+  font-size: 0.85rem;
+  color: var(--meta-color);
+  white-space: nowrap;
+}
+
+.cv-entry-org {
+  font-size: 0.95rem;
+  color: var(--meta-color);
+  margin-top: 0.1rem;
+}
+
+.cv-entry-details {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  ul {
+    margin: 0.3rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.2rem;
+  }
+}
+
+/* Responsive: stack on mobile */
+@media only screen and (max-width: 600px) {
+  .cv-entry-header {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cv-contact {
+    .cv-sep {
+      display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  /* Hide site chrome */
+  nav,
+  .navbar,
+  footer,
+  .footer,
+  .theme-switcher,
+  .lightswitch,
+  #theme-switcher {
+    display: none !important;
+  }
+
+  /* Reset colors for print */
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Override dark mode vars for print */
+  :root {
+    --text-color: black !important;
+    --background-color: white !important;
+    --meta-color: #555 !important;
+    --border-color: #ccc !important;
+    --links: black !important;
+  }
+
+  /* Disable transitions for instant rendering */
+  * {
+    transition: none !important;
+    color: black !important;
+    background: white !important;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .cv {
+    max-width: 100%;
+  }
+
+  .cv-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1.5pt solid black;
+  }
+
+  .cv-contact a {
+    text-decoration: none;
+    color: black !important;
+  }
+
+  .cv-body h2 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 0.5pt solid #999;
+    font-size: 13pt;
+  }
+
+  .cv-entry {
+    margin-bottom: 0.8rem;
+    break-inside: avoid;
+  }
+
+  .cv-entry-date {
+    color: #555 !important;
+  }
+
+  .cv-entry-org {
+    color: #555 !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 0.75in;
+  }
+
+  /* Avoid orphan headings */
+  h2 {
+    break-after: avoid;
+  }
+}
