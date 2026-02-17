@@ -126,6 +126,38 @@
   }
 }
 
+/* Back button + theme switcher bar */
+.cv-back {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--meta-color);
+    text-decoration: none;
+    background: var(--bg-1);
+    border: 1px solid var(--light-border-color);
+    border-radius: 6px;
+
+    &:hover {
+      color: var(--text-color);
+      border-color: var(--primary-color);
+    }
+  }
+
+  .theme-switcher {
+    display: flex;
+    align-items: center;
+  }
+}
+
 /* Responsive: stack on mobile */
 @media only screen and (max-width: 600px) {
   .cv-entry-header {
@@ -159,7 +191,8 @@
   .footer,
   .theme-switcher,
   .lightswitch,
-  #theme-switcher {
+  #theme-switcher,
+  .cv-back {
     display: none !important;
   }
 

@@ -1,26 +1,42 @@
-{% extends "base.html" %}
+{% import "macros/macros.html" as post_macros %}
 
-{% block main_content %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+{% include "partials/header.html" %}
 
-<article class="cv">
-    <header class="cv-header">
-        <h1>{{ page.title }}</h1>
-        <div class="cv-contact">
-            <span>Stephen J. Barr</span>
-            <span class="cv-sep">|</span>
-            <a href="https://www.stephenbarr.ai">stephenbarr.ai</a>
-            <span class="cv-sep">|</span>
-            <a href="https://www.linkedin.com/in/stephenjbarr/">LinkedIn</a>
-            <span class="cv-sep">|</span>
-            <a href="https://github.com/stephenVertex">GitHub</a>
-        </div>
-    </header>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-    <div class="cv-body">
-        {{ page.content | safe }}
+    <div class="content">
+        <article class="cv">
+            <header class="cv-header">
+                <h1>Stephen J. Barr</h1>
+                <div class="cv-contact">
+                    <a href="https://www.stephenbarr.ai">stephenbarr.ai</a>
+                    <span class="cv-sep">|</span>
+                    <a href="https://www.linkedin.com/in/stephenjbarr/">LinkedIn</a>
+                    <span class="cv-sep">|</span>
+                    <a href="https://github.com/stephenVertex">GitHub</a>
+                </div>
+            </header>
+
+            <div class="cv-body">
+                {{ page.content | safe }}
+            </div>
+        </article>
     </div>
-</article>
-{% endblock main_content %}
+
+    <div class="cv-back">
+        <a href="/">&larr; Back</a>
+        <label class="theme-switcher" for="themeswitch">
+            <input type="checkbox" id="themeswitch">
+            <img alt="switch to light mode" class="switch-off" src="/lightswitch/switch-off-transparent.png">
+            <img alt="switch to dark mode" class="switch-on" src="/lightswitch/switch-on-transparent.png">
+        </label>
+    </div>
+
+    <script src="{{ get_url(path='js/main.js', trailing_slash=false) | safe }}"></script>
+</body>
+</html>
