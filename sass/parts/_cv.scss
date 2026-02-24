@@ -118,6 +118,14 @@
   margin: 0 0.15rem;
 }
 
+.cv-phone-hidden {
+  display: none;
+}
+
+#cv-phone-container .cv-icon-link {
+  color: var(--links);
+}
+
 .cv-entry-org {
   font-size: 0.9rem;
   color: var(--meta-color);

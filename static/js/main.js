@@ -25,3 +25,20 @@ function switchTheme(e) {
 
 // event listener on checkbox change
 themeSwitcher.addEventListener('change', switchTheme, false);
+
+// Load local-only phone number if available
+(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/phone.txt', true);
+    xhr.onload = function() {
+        if (xhr.status === 200 && xhr.responseText.trim()) {
+            var el = document.getElementById('cv-phone');
+            var container = document.getElementById('cv-phone-container');
+            if (el && container) {
+                el.textContent = xhr.responseText.trim();
+                container.style.display = 'inline';
+            }
+        }
+    };
+    xhr.send();
+})();
