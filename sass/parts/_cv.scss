@@ -90,9 +90,8 @@
 
 .cv-entry-header {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.3rem;
+  flex-direction: column;
+  gap: 0;
 }
 
 .cv-entry-title {
@@ -100,22 +99,28 @@
   font-size: 0.92rem;
 }
 
-.cv-entry-org {
-  font-size: 0.85rem;
+.cv-entry-subtitle {
+  font-size: 0.78rem;
   color: var(--meta-color);
 }
 
+.cv-entry-org {
+  font-style: italic;
+}
+
 .cv-entry-date {
-  font-size: 0.78rem;
   font-family: 'Roboto Mono', monospace;
-  color: var(--meta-color);
-  white-space: nowrap;
 }
 
 .cv-entry-sep {
   color: var(--meta-color);
   opacity: 0.4;
   margin: 0 0.15rem;
+}
+
+.cv-subtitle-sep {
+  opacity: 0.4;
+  margin: 0 0.3rem;
 }
 
 .cv-phone-hidden {
