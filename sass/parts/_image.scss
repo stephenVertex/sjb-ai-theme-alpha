@@ -45,24 +45,24 @@ svg {
   transition: opacity 1s ease-in-out;
 }
 
-/* Dark image is in normal flow, light image overlays */
-.profile-img-dark {
+/* Light image is in normal flow, dark image overlays */
+.profile-img-light {
   display: block;
   opacity: 1;
 }
 
-.profile-img-light {
+.profile-img-dark {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-/* Light theme: show light image, hide dark */
-[data-theme="light"] .profile-img-light {
+/* Dark theme: show dark image */
+[data-theme="dark"] .profile-img-dark {
   opacity: 1;
 }
 
-[data-theme="light"] .profile-img-dark {
-  opacity: 1; /* Keep visible but behind light image */
+[data-theme="dark"] .profile-img-light {
+  opacity: 1;
 }
