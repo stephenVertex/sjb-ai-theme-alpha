@@ -5,9 +5,10 @@ var cvThemeToggle = document.getElementById('cv-theme-toggle');
 var currentTheme = localStorage.getItem('theme');
 
 // check what is current theme right now and activate it
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'light' && themeSwitcher) {
+// Light is default (no attribute), dark needs data-theme="dark"
+if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if (themeSwitcher) {
         themeSwitcher.checked = true;
     }
 }
@@ -15,12 +16,12 @@ if (currentTheme) {
 // switch between themes (checkbox on other pages)
 function switchTheme(e) {
     if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }
-    else {        
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
+    }
+    else {        
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
     }    
 }
 
@@ -33,12 +34,12 @@ if (themeSwitcher) {
 if (cvThemeToggle) {
     cvThemeToggle.addEventListener('click', function() {
         var current = document.documentElement.getAttribute('data-theme');
-        if (current === 'light') {
+        if (current === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.removeItem('theme');
+        } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
         }
     });
 }

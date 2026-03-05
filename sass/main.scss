@@ -25,7 +25,24 @@
   font-family: 'Roboto Mono', monospace;
   line-height: 180%;
 
+  --bg-0: #fff;
+  --bg-1: #f2f2f2;
+  --bg-2: #fefefe;
+  --hover-color: white;
+  --background-color:#fff;
+  --navbar-color:#e3e3e3;
+  --secondary-color:rgb(158, 158, 158);
+  --text-color: #222226;
+  --border-color: rgb(114, 114, 114);
+  --light-border-color: rgba(255, 255, 255, 0.1);
+  --input-back: #161616;
+  --input-color: #294797;
+  --input-back: rgb(158, 158, 158);
+  --input-color: #fbec48;
+  --meta-color: rgb(53, 53, 53);
+}
 
+[data-theme="dark"] {
   --bg-0: #121212;
   --bg-1: rgba(255, 255, 255, 5%);
   --bg-2: rgba(23, 23, 23, 100%);
@@ -43,24 +60,6 @@
   --input-back: #4b4a4a;
   --input-color: #294797;
   --meta-color: rgb(198, 197, 197);
-}
-
-[data-theme="light"] {
-  --bg-0: #fff;
-  --bg-1: #f2f2f2;
-  --bg-2: #fefefe;
-  --hover-color: white;
-  --background-color:#fff;
-  --navbar-color:#e3e3e3;
-  --secondary-color:rgb(158, 158, 158);
-  --text-color: #222226;
-  --border-color: rgb(114, 114, 114);
-  --light-border-color: rgba(255, 255, 255, 0.1);
-  --input-back: #161616;
-  --input-color: #294797;
-  --input-back: rgb(158, 158, 158);
-  --input-color: #fbec48;
-  --meta-color: rgb(53, 53, 53);
 }
 
 html {
@@ -129,10 +128,9 @@ a, button, input, .theme-switcher {
 
 /* Style the "Blog" heading with green color */
 .content h2 {
-  color: #24D9BA; /* Green from the cool palette */
+  color: var(--uchu-green-6);
 }
 
-/* Use uchu-green-6 for h2 in light mode */
-[data-theme="light"] .content h2 {
-  color: var(--uchu-green-6);
+[data-theme="dark"] .content h2 {
+  color: #24D9BA;
 }
