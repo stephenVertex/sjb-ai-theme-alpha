@@ -25,21 +25,27 @@
   font-family: 'Roboto Mono', monospace;
   line-height: 180%;
 
-  --bg-0: #fff;
-  --bg-1: #f2f2f2;
-  --bg-2: #fefefe;
-  --hover-color: white;
-  --background-color:#fff;
-  --navbar-color:#e3e3e3;
-  --secondary-color:rgb(158, 158, 158);
-  --text-color: #222226;
-  --border-color: rgb(114, 114, 114);
-  --light-border-color: rgba(255, 255, 255, 0.1);
-  --input-back: #161616;
-  --input-color: #294797;
-  --input-back: rgb(158, 158, 158);
-  --input-color: #fbec48;
-  --meta-color: rgb(53, 53, 53);
+  --bg-0: #f7f7f2;
+  --bg-1: #ecece6;
+  --bg-2: #fcfcf8;
+  --primary-color: #b4233a;
+  --hover-color: #ffffff;
+  --background-color: #f7f7f2;
+  --navbar-color: #e9e9e2;
+  --secondary-color: #d6d6ce;
+  --highlights: #f1d879;
+  --selection-background: #f1d879;
+  --selection-text: #25252a;
+  --links: #0b64a8;
+  --accent-blue: #0b64a8;
+  --accent-green: #1f7046;
+  --text-color: #29292e;
+  --code: #a51d35;
+  --border-color: #81827e;
+  --light-border-color: rgba(41, 41, 46, 0.14);
+  --input-back: #deded6;
+  --input-color: #253b77;
+  --meta-color: #55565c;
 }
 
 [data-theme="dark"] {
@@ -52,7 +58,11 @@
   --navbar-color:#222226;
   --secondary-color:#1b1b20;
   --highlights: #b35a5a;
+  --selection-background: #f1d879;
+  --selection-text: #1b1b20;
   --links: #449cf8;
+  --accent-blue: #66adff;
+  --accent-green: #24D9BA;
   --text-color: #f2f2f2;
   --code: #ef476f;
   --border-color: #111;
@@ -128,9 +138,9 @@ a, button, input, .theme-switcher {
 
 /* Style the "Blog" heading with green color */
 .content h2 {
-  color: var(--uchu-green-6);
+  color: var(--accent-green);
 }
 
 [data-theme="dark"] .content h2 {
-  color: #24D9BA;
+  color: var(--accent-green);
 }

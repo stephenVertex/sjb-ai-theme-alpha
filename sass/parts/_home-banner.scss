@@ -22,7 +22,7 @@
 
 /* Style the "Stephen J. Barr" heading with blue color */
 #home-banner-text h2 {
-    color: #1278E0; /* Blue from the cool palette */
+    color: var(--accent-blue);
 }
 
 .banner-home-img{
